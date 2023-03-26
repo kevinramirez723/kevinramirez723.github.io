@@ -5,6 +5,7 @@ function buildNav(selector) {
         console.log(active);
         if (active == "") {
             active = "index.html";
+            console.log("true");
         }
         $(`a[href="${active}"]`).addClass('active').attr('aria-current', 'page');
     });
