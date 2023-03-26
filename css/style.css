@@ -1,7 +1,12 @@
-h1 {
-    color: maroon;
+.nav-tabs {
+    background-color: maroon;
+    --bs-nav-tabs-border-width: 0px;
+    --bs-nav-tabs-link-active-color: white;
+    --bs-nav-tabs-link-active-bg: #530a10;
+    --bs-nav-tabs-border-radius: 0rem;
 }
 
-p#second {
-    color: #C16622;
+.nav {
+    --bs-nav-link-color: white;
+    --bs-nav-link-hover-color: grey;
 }
