@@ -10,3 +10,37 @@
     --bs-nav-link-color: white;
     --bs-nav-link-hover-color: grey;
 }
+
+.banner {
+    position: relative;
+}
+
+.banner .container {
+    animation: 1s ease-out .5s 1 slideInLeft forwards;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    color: white;
+    position: absolute;
+    bottom: 25%;
+    width: 40%;
+    max-width: 500px;
+    padding-left: 3%;
+    transform: translateX(-100%);
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.btn {
+    --bs-btn-border-width: 0px;
+}
+
+.btn-primary {
+    --bs-btn-disabled-bg: #530a10;
+}

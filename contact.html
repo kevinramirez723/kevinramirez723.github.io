@@ -37,7 +37,27 @@
         <script>buildNav($("#nav-placeholder"));</script>
     </header>
     <main>
-        <div class="p">Example contact</div>
+        <form class="container mt-5">
+                <div class="mb-3">
+                    <label for="inquiry" class="form-label">Inquiry</label>
+                    <textarea
+                        type="inquiry"
+                        class="form-control"
+                        id="inquiry"
+                        aria-describedby="InquiryInputForm"
+                    ></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="name@example.com"
+                    >
+                </div>
+                <button type="submit" class="btn btn-primary disabled">Submit</button>
+        </form>
     </main>
     <footer>
         <!-- place footer here -->

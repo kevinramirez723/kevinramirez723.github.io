@@ -32,12 +32,33 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky-top">
         <nav id="nav-placeholder"></nav>
         <script>buildNav($("#nav-placeholder"));</script>
     </header>
     <main>
-        <div class="h1">Hello World</div>
+        <div class="banner d-none d-sm-block">
+            <img class="img-fluid" src="resources/banner.jpg">
+            <div class="container">
+                <h1>Hello World!</h1>
+                <h2>This is an example website.</h2>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <h2>Info</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Cupiditate maxime laudantium eius dignissimos aut magnam
+                enim delectus, doloribus inventore explicabo quibusdam repellat
+                quo soluta ab minima saepe unde temporibus optio.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Cupiditate maxime laudantium eius dignissimos aut magnam
+                enim delectus, doloribus inventore explicabo quibusdam repellat
+                quo soluta ab minima saepe unde temporibus optio.
+            </p>
+        </div>
     </main>
     <footer>
     <!-- place footer here -->
