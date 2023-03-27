@@ -44,3 +44,9 @@
 .btn-primary {
     --bs-btn-disabled-bg: #530a10;
 }
+
+.img-max {
+    max-height: 500px;
+    width:100%;
+    object-fit: cover;
+}
