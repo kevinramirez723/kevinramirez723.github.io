@@ -9,6 +9,8 @@
 .nav {
     --bs-nav-link-color: white;
     --bs-nav-link-hover-color: grey;
+    --bs-nav-link-padding-x: 1.5rem;
+    --bs-nav-link-padding-y: .75rem;
 }
 
 .banner {
