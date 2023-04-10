@@ -1,54 +1,957 @@
-.nav-tabs {
-    background-color: maroon;
-    --bs-nav-tabs-border-width: 0px;
-    --bs-nav-tabs-link-active-color: white;
-    --bs-nav-tabs-link-active-bg: #530a10;
-    --bs-nav-tabs-border-radius: 0rem;
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap);
+html {
+  height: 100%;
 }
 
-.nav {
-    --bs-nav-link-color: white;
-    --bs-nav-link-hover-color: grey;
-    --bs-nav-link-padding-x: 1.5rem;
-    --bs-nav-link-padding-y: .75rem;
+body {
+  background-color: #0f0e15;
+  font-family: "Inter", sans-serif;
+  color: white;
+  min-height: 100%;
 }
 
-.banner {
-    position: relative;
+.bg-image {
+  background-image: linear-gradient(rgba(15, 14, 21, 0.5) 30%, #0f0e15), url(../resources/background.jpg);
+  background-size: cover;
+  height: 90vh;
 }
 
-.banner .container {
-    animation: 1s ease-out .5s 1 slideInLeft forwards;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(1px);
-    color: white;
+.navbar {
+  padding-top: 3em;
+}
+.navbar .navbar-toggler {
+  background-color: #0f0e15;
+  position: fixed;
+  top: 10px;
+}
+.navbar .nav-link {
+  margin: 0 1.5em;
+  color: #bfbfbf;
+  font-weight: 700;
+  font-size: 0.9em;
+  animation-duration: 2s;
+  animation-name: fadeInDown;
+  animation-iteration-count: 1;
+}
+.navbar .nav-link.active {
+  color: #bfbfbf;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+.navbar .nav-link:hover {
+  color: white;
+  text-shadow: 0 0 7px white;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    background-color: #0f0e15;
+    margin-right: 60%;
     position: absolute;
-    bottom: 25%;
-    width: 40%;
-    max-width: 500px;
-    padding-left: 3%;
-    transform: translateX(-100%);
+    top: 48px;
+    left: 20px;
+  }
 }
-
-@keyframes slideInLeft {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+.title-container {
+  margin-top: 16vh;
 }
-
-.btn {
-    --bs-btn-border-width: 0px;
+.title-container .title {
+  font-size: 10vmin;
+}
+.title-container .title::before {
+  content: "​";
+  content: "​"/"Welcome,\aI'm Kevin.";
+  alt: "Welcome,\aI'm Kevin.";
+  white-space: break-spaces;
+  will-change: content;
+  animation: typed-0 8.025s linear 1s 0 forwards, typed-0-final 2.375s linear 1s 1 forwards;
+}
+@keyframes typed-0-final {
+  0%, 5.2631578947% {
+    content: "​W";
+    content: "​W"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  5.2641578947%, 10.5263157895% {
+    content: "​We";
+    content: "​We"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  10.5273157895%, 15.7894736842% {
+    content: "​Wel";
+    content: "​Wel"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  15.7904736842%, 21.0526315789% {
+    content: "​Welc";
+    content: "​Welc"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  21.0536315789%, 26.3157894737% {
+    content: "​Welco";
+    content: "​Welco"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  26.3167894737%, 31.5789473684% {
+    content: "​Welcom";
+    content: "​Welcom"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  31.5799473684%, 36.8421052632% {
+    content: "​Welcome";
+    content: "​Welcome"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  36.8431052632%, 42.1052631579% {
+    content: "​Welcome,";
+    content: "​Welcome,"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  42.1062631579%, 47.3684210526% {
+    content: "​Welcome,\a";
+    content: "​Welcome,\a"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  47.3694210526%, 52.6315789474% {
+    content: "​Welcome,\aI";
+    content: "​Welcome,\aI"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  52.6325789474%, 57.8947368421% {
+    content: "​Welcome,\aI'";
+    content: "​Welcome,\aI'"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  57.8957368421%, 63.1578947368% {
+    content: "​Welcome,\aI'm";
+    content: "​Welcome,\aI'm"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  63.1588947368%, 68.4210526316% {
+    content: "​Welcome,\aI'm ";
+    content: "​Welcome,\aI'm "/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  68.4220526316%, 73.6842105263% {
+    content: "​Welcome,\aI'm K";
+    content: "​Welcome,\aI'm K"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  73.6852105263%, 78.9473684211% {
+    content: "​Welcome,\aI'm Ke";
+    content: "​Welcome,\aI'm Ke"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  78.9483684211%, 84.2105263158% {
+    content: "​Welcome,\aI'm Kev";
+    content: "​Welcome,\aI'm Kev"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  84.2115263158%, 89.4736842105% {
+    content: "​Welcome,\aI'm Kevi";
+    content: "​Welcome,\aI'm Kevi"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  89.4746842105%, 94.7368421053% {
+    content: "​Welcome,\aI'm Kevin";
+    content: "​Welcome,\aI'm Kevin"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  94.7378421053%, 100% {
+    content: "​Welcome,\aI'm Kevin.";
+    content: "​Welcome,\aI'm Kevin."/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+}
+.title-container .title::after {
+  content: "​";
+  position: relative;
+  display: inline-block;
+  padding-right: 0.1ch;
+  border-right: 4px solid currentColor;
+  white-space: nowrap;
+  animation: typed-0-caret 1s linear 1s infinite forwards;
+}
+@keyframes typed-0 {
+  0%, 1.5566323988% {
+    content: "​W";
+    content: "​W"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  1.5576323988%, 3.1142647975% {
+    content: "​We";
+    content: "​We"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  3.1152647975%, 4.6718971963% {
+    content: "​Wel";
+    content: "​Wel"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  4.6728971963%, 6.229529595% {
+    content: "​Welc";
+    content: "​Welc"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  6.230529595%, 7.7871619938% {
+    content: "​Welco";
+    content: "​Welco"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  7.7881619938%, 9.3447943925% {
+    content: "​Welcom";
+    content: "​Welcom"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  9.3457943925%, 10.9024267913% {
+    content: "​Welcome";
+    content: "​Welcome"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  10.9034267913%, 12.46005919% {
+    content: "​Welcome,";
+    content: "​Welcome,"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  12.46105919%, 14.0176915888% {
+    content: "​Welcome,\a";
+    content: "​Welcome,\a"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  14.0186915888%, 15.5753239875% {
+    content: "​Welcome,\aI";
+    content: "​Welcome,\aI"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  15.5763239875%, 17.1329563863% {
+    content: "​Welcome,\aI'";
+    content: "​Welcome,\aI'"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  17.1339563863%, 18.690588785% {
+    content: "​Welcome,\aI'm";
+    content: "​Welcome,\aI'm"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  18.691588785%, 20.2482211838% {
+    content: "​Welcome,\aI'm ";
+    content: "​Welcome,\aI'm "/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  20.2492211838%, 21.8058535826% {
+    content: "​Welcome,\aI'm K";
+    content: "​Welcome,\aI'm K"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  21.8068535826%, 23.3634859813% {
+    content: "​Welcome,\aI'm Ke";
+    content: "​Welcome,\aI'm Ke"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  23.3644859813%, 24.9211183801% {
+    content: "​Welcome,\aI'm Kev";
+    content: "​Welcome,\aI'm Kev"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  24.9221183801%, 26.4787507788% {
+    content: "​Welcome,\aI'm Kevi";
+    content: "​Welcome,\aI'm Kevi"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  26.4797507788%, 28.0363831776% {
+    content: "​Welcome,\aI'm Kevin";
+    content: "​Welcome,\aI'm Kevin"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  28.0373831776%, 61.9927694704% {
+    content: "​Welcome,\aI'm Kevin.";
+    content: "​Welcome,\aI'm Kevin."/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  61.9937694704%, 63.2388753894% {
+    content: "​Welcome,\aI'm Kevin";
+    content: "​Welcome,\aI'm Kevin"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  63.2398753894%, 64.4849813084% {
+    content: "​Welcome,\aI'm Kevi";
+    content: "​Welcome,\aI'm Kevi"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  64.4859813084%, 65.7310872274% {
+    content: "​Welcome,\aI'm Kev";
+    content: "​Welcome,\aI'm Kev"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  65.7320872274%, 66.9771931464% {
+    content: "​Welcome,\aI'm Ke";
+    content: "​Welcome,\aI'm Ke"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  66.9781931464%, 68.2232990654% {
+    content: "​Welcome,\aI'm K";
+    content: "​Welcome,\aI'm K"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  68.2242990654%, 69.4694049844% {
+    content: "​Welcome,\aI'm ";
+    content: "​Welcome,\aI'm "/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  69.4704049844%, 70.7155109034% {
+    content: "​Welcome,\aI'm";
+    content: "​Welcome,\aI'm"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  70.7165109034%, 71.9616168224% {
+    content: "​Welcome,\aI'";
+    content: "​Welcome,\aI'"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  71.9626168224%, 73.2077227414% {
+    content: "​Welcome,\aI";
+    content: "​Welcome,\aI"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  73.2087227414%, 74.4538286604% {
+    content: "​Welcome,\a";
+    content: "​Welcome,\a"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  74.4548286604%, 75.6999345794% {
+    content: "​Welcome,";
+    content: "​Welcome,"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  75.7009345794%, 76.9460404984% {
+    content: "​Welcome";
+    content: "​Welcome"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  76.9470404984%, 78.1921464174% {
+    content: "​Welcom";
+    content: "​Welcom"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  78.1931464174%, 79.4382523364% {
+    content: "​Welco";
+    content: "​Welco"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  79.4392523364%, 80.6843582555% {
+    content: "​Welc";
+    content: "​Welc"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  80.6853582555%, 81.9304641745% {
+    content: "​Wel";
+    content: "​Wel"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  81.9314641745%, 83.1765700935% {
+    content: "​We";
+    content: "​We"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  83.1775700935%, 84.4226760125% {
+    content: "​W";
+    content: "​W"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+  84.4236760125%, 100% {
+    content: "​";
+    content: "​"/"Welcome,\aI'm Kevin.";
+    alt: "Welcome,\aI'm Kevin.";
+  }
+}
+@keyframes typed-0-caret {
+  75% {
+    border-color: transparent;
+  }
+}
+.title-container .subtitle {
+  font-size: 8vmin;
+  color: #bfbfbf;
+}
+.title-container .subtitle::before {
+  content: "​";
+  content: "​"/"Aspiring ";
+  alt: "Aspiring ";
+  white-space: break-spaces;
+  will-change: content;
+  animation: typed-1 3.08s linear 5s 0 forwards, typed-1-final 0.6s linear 5s 1 forwards;
+}
+@keyframes typed-1-final {
+  0%, 11.1111111111% {
+    content: "​A";
+    content: "​A"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  11.1121111111%, 22.2222222222% {
+    content: "​As";
+    content: "​As"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  22.2232222222%, 33.3333333333% {
+    content: "​Asp";
+    content: "​Asp"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  33.3343333333%, 44.4444444444% {
+    content: "​Aspi";
+    content: "​Aspi"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  44.4454444444%, 55.5555555556% {
+    content: "​Aspir";
+    content: "​Aspir"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  55.5565555556%, 66.6666666667% {
+    content: "​Aspiri";
+    content: "​Aspiri"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  66.6676666667%, 77.7777777778% {
+    content: "​Aspirin";
+    content: "​Aspirin"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  77.7787777778%, 88.8888888889% {
+    content: "​Aspiring";
+    content: "​Aspiring"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  88.8898888889%, 100% {
+    content: "​Aspiring ";
+    content: "​Aspiring "/"Aspiring ";
+    alt: "Aspiring ";
+  }
+}
+@keyframes typed-1 {
+  0%, 2.1635021645% {
+    content: "​A";
+    content: "​A"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  2.1645021645%, 4.328004329% {
+    content: "​As";
+    content: "​As"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  4.329004329%, 6.4925064935% {
+    content: "​Asp";
+    content: "​Asp"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  6.4935064935%, 8.657008658% {
+    content: "​Aspi";
+    content: "​Aspi"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  8.658008658%, 10.8215108225% {
+    content: "​Aspir";
+    content: "​Aspir"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  10.8225108225%, 12.986012987% {
+    content: "​Aspiri";
+    content: "​Aspiri"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  12.987012987%, 15.1505151515% {
+    content: "​Aspirin";
+    content: "​Aspirin"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  15.1515151515%, 17.315017316% {
+    content: "​Aspiring";
+    content: "​Aspiring"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  17.316017316%, 64.5011645022% {
+    content: "​Aspiring ";
+    content: "​Aspiring "/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  64.5021645022%, 66.2327662338% {
+    content: "​Aspiring";
+    content: "​Aspiring"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  66.2337662338%, 67.9643679654% {
+    content: "​Aspirin";
+    content: "​Aspirin"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  67.9653679654%, 69.695969697% {
+    content: "​Aspiri";
+    content: "​Aspiri"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  69.696969697%, 71.4275714286% {
+    content: "​Aspir";
+    content: "​Aspir"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  71.4285714286%, 73.1591731602% {
+    content: "​Aspi";
+    content: "​Aspi"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  73.1601731602%, 74.8907748918% {
+    content: "​Asp";
+    content: "​Asp"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  74.8917748918%, 76.6223766234% {
+    content: "​As";
+    content: "​As"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  76.6233766234%, 78.353978355% {
+    content: "​A";
+    content: "​A"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+  78.354978355%, 100% {
+    content: "​";
+    content: "​"/"Aspiring ";
+    alt: "Aspiring ";
+  }
+}
+.title-container .subtitle span::before {
+  content: "​";
+  content: "​"/"data analyst.";
+  alt: "data analyst.";
+  white-space: break-spaces;
+  will-change: content;
+  animation: typed-2 13.8s linear 6s infinite forwards;
+}
+.title-container .subtitle span::after {
+  content: "​";
+  position: relative;
+  display: inline-block;
+  padding-right: 0.1ch;
+  border-right: 4px solid currentColor;
+  white-space: nowrap;
+  animation: typed-2-caret 0.75s linear 6s infinite forwards;
+}
+@keyframes typed-2 {
+  0%, 0.3613188406% {
+    content: "​d";
+    content: "​d"/"data analyst.";
+    alt: "data analyst.";
+  }
+  0.3623188406%, 0.7236376812% {
+    content: "​da";
+    content: "​da"/"data analyst.";
+    alt: "data analyst.";
+  }
+  0.7246376812%, 1.0859565217% {
+    content: "​dat";
+    content: "​dat"/"data analyst.";
+    alt: "data analyst.";
+  }
+  1.0869565217%, 1.4482753623% {
+    content: "​data";
+    content: "​data"/"data analyst.";
+    alt: "data analyst.";
+  }
+  1.4492753623%, 1.8105942029% {
+    content: "​data ";
+    content: "​data "/"data analyst.";
+    alt: "data analyst.";
+  }
+  1.8115942029%, 2.1729130435% {
+    content: "​data a";
+    content: "​data a"/"data analyst.";
+    alt: "data analyst.";
+  }
+  2.1739130435%, 2.5352318841% {
+    content: "​data an";
+    content: "​data an"/"data analyst.";
+    alt: "data analyst.";
+  }
+  2.5362318841%, 2.8975507246% {
+    content: "​data ana";
+    content: "​data ana"/"data analyst.";
+    alt: "data analyst.";
+  }
+  2.8985507246%, 3.2598695652% {
+    content: "​data anal";
+    content: "​data anal"/"data analyst.";
+    alt: "data analyst.";
+  }
+  3.2608695652%, 3.6221884058% {
+    content: "​data analy";
+    content: "​data analy"/"data analyst.";
+    alt: "data analyst.";
+  }
+  3.6231884058%, 3.9845072464% {
+    content: "​data analys";
+    content: "​data analys"/"data analyst.";
+    alt: "data analyst.";
+  }
+  3.9855072464%, 4.346826087% {
+    content: "​data analyst";
+    content: "​data analyst"/"data analyst.";
+    alt: "data analyst.";
+  }
+  4.347826087%, 15.9410289855% {
+    content: "​data analyst.";
+    content: "​data analyst."/"data analyst.";
+    alt: "data analyst.";
+  }
+  15.9420289855%, 16.3033478261% {
+    content: "​data analyst";
+    content: "​data analyst"/"data analyst.";
+    alt: "data analyst.";
+  }
+  16.3043478261%, 16.6656666667% {
+    content: "​data analys";
+    content: "​data analys"/"data analyst.";
+    alt: "data analyst.";
+  }
+  16.6666666667%, 17.0279855072% {
+    content: "​data analy";
+    content: "​data analy"/"data analyst.";
+    alt: "data analyst.";
+  }
+  17.0289855072%, 17.3903043478% {
+    content: "​data anal";
+    content: "​data anal"/"data analyst.";
+    alt: "data analyst.";
+  }
+  17.3913043478%, 17.7526231884% {
+    content: "​data ana";
+    content: "​data ana"/"data analyst.";
+    alt: "data analyst.";
+  }
+  17.7536231884%, 18.114942029% {
+    content: "​data an";
+    content: "​data an"/"data analyst.";
+    alt: "data analyst.";
+  }
+  18.115942029%, 18.4772608696% {
+    content: "​data a";
+    content: "​data a"/"data analyst.";
+    alt: "data analyst.";
+  }
+  18.4782608696%, 18.8395797101% {
+    content: "​data ";
+    content: "​data "/"data analyst.";
+    alt: "data analyst.";
+  }
+  18.8405797101%, 19.2018985507% {
+    content: "​data";
+    content: "​data"/"data analyst.";
+    alt: "data analyst.";
+  }
+  19.2028985507%, 19.5642173913% {
+    content: "​dat";
+    content: "​dat"/"data analyst.";
+    alt: "data analyst.";
+  }
+  19.5652173913%, 19.9265362319% {
+    content: "​da";
+    content: "​da"/"data analyst.";
+    alt: "data analyst.";
+  }
+  19.9275362319%, 20.2888550725% {
+    content: "​d";
+    content: "​d"/"data analyst.";
+    alt: "data analyst.";
+  }
+  20.2898550725%, 27.5352318841% {
+    content: "​";
+    content: "​"/"data analyst.";
+    alt: "data analyst.";
+  }
+  27.5362318841%, 27.8975507246% {
+    content: "​a";
+    content: "​a"/"data analyst.";
+    alt: "data analyst.";
+  }
+  27.8985507246%, 28.2598695652% {
+    content: "​ar";
+    content: "​ar"/"data analyst.";
+    alt: "data analyst.";
+  }
+  28.2608695652%, 28.6221884058% {
+    content: "​art";
+    content: "​art"/"data analyst.";
+    alt: "data analyst.";
+  }
+  28.6231884058%, 28.9845072464% {
+    content: "​arti";
+    content: "​arti"/"data analyst.";
+    alt: "data analyst.";
+  }
+  28.9855072464%, 29.346826087% {
+    content: "​artis";
+    content: "​artis"/"data analyst.";
+    alt: "data analyst.";
+  }
+  29.347826087%, 29.7091449275% {
+    content: "​artist";
+    content: "​artist"/"data analyst.";
+    alt: "data analyst.";
+  }
+  29.7101449275%, 41.3033478261% {
+    content: "​artist.";
+    content: "​artist."/"data analyst.";
+    alt: "data analyst.";
+  }
+  41.3043478261%, 41.6656666667% {
+    content: "​artist";
+    content: "​artist"/"data analyst.";
+    alt: "data analyst.";
+  }
+  41.6666666667%, 42.0279855072% {
+    content: "​artis";
+    content: "​artis"/"data analyst.";
+    alt: "data analyst.";
+  }
+  42.0289855072%, 42.3903043478% {
+    content: "​arti";
+    content: "​arti"/"data analyst.";
+    alt: "data analyst.";
+  }
+  42.3913043478%, 42.7526231884% {
+    content: "​art";
+    content: "​art"/"data analyst.";
+    alt: "data analyst.";
+  }
+  42.7536231884%, 43.114942029% {
+    content: "​ar";
+    content: "​ar"/"data analyst.";
+    alt: "data analyst.";
+  }
+  43.115942029%, 43.4772608696% {
+    content: "​a";
+    content: "​a"/"data analyst.";
+    alt: "data analyst.";
+  }
+  43.4782608696%, 50.7236376812% {
+    content: "​";
+    content: "​"/"data analyst.";
+    alt: "data analyst.";
+  }
+  50.7246376812%, 51.0859565217% {
+    content: "​a";
+    content: "​a"/"data analyst.";
+    alt: "data analyst.";
+  }
+  51.0869565217%, 51.4482753623% {
+    content: "​an";
+    content: "​an"/"data analyst.";
+    alt: "data analyst.";
+  }
+  51.4492753623%, 51.8105942029% {
+    content: "​ani";
+    content: "​ani"/"data analyst.";
+    alt: "data analyst.";
+  }
+  51.8115942029%, 52.1729130435% {
+    content: "​anim";
+    content: "​anim"/"data analyst.";
+    alt: "data analyst.";
+  }
+  52.1739130435%, 52.5352318841% {
+    content: "​anima";
+    content: "​anima"/"data analyst.";
+    alt: "data analyst.";
+  }
+  52.5362318841%, 52.8975507246% {
+    content: "​animat";
+    content: "​animat"/"data analyst.";
+    alt: "data analyst.";
+  }
+  52.8985507246%, 53.2598695652% {
+    content: "​animato";
+    content: "​animato"/"data analyst.";
+    alt: "data analyst.";
+  }
+  53.2608695652%, 53.6221884058% {
+    content: "​animator";
+    content: "​animator"/"data analyst.";
+    alt: "data analyst.";
+  }
+  53.6231884058%, 65.2163913043% {
+    content: "​animator.";
+    content: "​animator."/"data analyst.";
+    alt: "data analyst.";
+  }
+  65.2173913043%, 65.5787101449% {
+    content: "​animator";
+    content: "​animator"/"data analyst.";
+    alt: "data analyst.";
+  }
+  65.5797101449%, 65.9410289855% {
+    content: "​animato";
+    content: "​animato"/"data analyst.";
+    alt: "data analyst.";
+  }
+  65.9420289855%, 66.3033478261% {
+    content: "​animat";
+    content: "​animat"/"data analyst.";
+    alt: "data analyst.";
+  }
+  66.3043478261%, 66.6656666667% {
+    content: "​anima";
+    content: "​anima"/"data analyst.";
+    alt: "data analyst.";
+  }
+  66.6666666667%, 67.0279855072% {
+    content: "​anim";
+    content: "​anim"/"data analyst.";
+    alt: "data analyst.";
+  }
+  67.0289855072%, 67.3903043478% {
+    content: "​ani";
+    content: "​ani"/"data analyst.";
+    alt: "data analyst.";
+  }
+  67.3913043478%, 67.7526231884% {
+    content: "​an";
+    content: "​an"/"data analyst.";
+    alt: "data analyst.";
+  }
+  67.7536231884%, 68.114942029% {
+    content: "​a";
+    content: "​a"/"data analyst.";
+    alt: "data analyst.";
+  }
+  68.115942029%, 75.3613188406% {
+    content: "​";
+    content: "​"/"data analyst.";
+    alt: "data analyst.";
+  }
+  75.3623188406%, 75.7236376812% {
+    content: "​g";
+    content: "​g"/"data analyst.";
+    alt: "data analyst.";
+  }
+  75.7246376812%, 76.0859565217% {
+    content: "​ga";
+    content: "​ga"/"data analyst.";
+    alt: "data analyst.";
+  }
+  76.0869565217%, 76.4482753623% {
+    content: "​gam";
+    content: "​gam"/"data analyst.";
+    alt: "data analyst.";
+  }
+  76.4492753623%, 76.8105942029% {
+    content: "​game";
+    content: "​game"/"data analyst.";
+    alt: "data analyst.";
+  }
+  76.8115942029%, 77.1729130435% {
+    content: "​game ";
+    content: "​game "/"data analyst.";
+    alt: "data analyst.";
+  }
+  77.1739130435%, 77.5352318841% {
+    content: "​game d";
+    content: "​game d"/"data analyst.";
+    alt: "data analyst.";
+  }
+  77.5362318841%, 77.8975507246% {
+    content: "​game de";
+    content: "​game de"/"data analyst.";
+    alt: "data analyst.";
+  }
+  77.8985507246%, 78.2598695652% {
+    content: "​game dev";
+    content: "​game dev"/"data analyst.";
+    alt: "data analyst.";
+  }
+  78.2608695652%, 89.8540724638% {
+    content: "​game dev.";
+    content: "​game dev."/"data analyst.";
+    alt: "data analyst.";
+  }
+  89.8550724638%, 90.2163913043% {
+    content: "​game dev";
+    content: "​game dev"/"data analyst.";
+    alt: "data analyst.";
+  }
+  90.2173913043%, 90.5787101449% {
+    content: "​game de";
+    content: "​game de"/"data analyst.";
+    alt: "data analyst.";
+  }
+  90.5797101449%, 90.9410289855% {
+    content: "​game d";
+    content: "​game d"/"data analyst.";
+    alt: "data analyst.";
+  }
+  90.9420289855%, 91.3033478261% {
+    content: "​game ";
+    content: "​game "/"data analyst.";
+    alt: "data analyst.";
+  }
+  91.3043478261%, 91.6656666667% {
+    content: "​game";
+    content: "​game"/"data analyst.";
+    alt: "data analyst.";
+  }
+  91.6666666667%, 92.0279855072% {
+    content: "​gam";
+    content: "​gam"/"data analyst.";
+    alt: "data analyst.";
+  }
+  92.0289855072%, 92.3903043478% {
+    content: "​ga";
+    content: "​ga"/"data analyst.";
+    alt: "data analyst.";
+  }
+  92.3913043478%, 92.7526231884% {
+    content: "​g";
+    content: "​g"/"data analyst.";
+    alt: "data analyst.";
+  }
+  92.7536231884%, 100% {
+    content: "​";
+    content: "​"/"data analyst.";
+    alt: "data analyst.";
+  }
+}
+@keyframes typed-2-caret {
+  75% {
+    border-color: transparent;
+  }
 }
 
 .btn-primary {
-    --bs-btn-disabled-bg: #530a10;
+  background-color: #0f0e15;
+  border: 0;
+}
+.btn-primary:hover {
+  background-color: #0f0e15 !important;
+  box-shadow: 0 0 10px white;
+}
+.btn-primary.active {
+  background-color: green !important;
+}
+.btn-primary.active:hover {
+  background-color: green !important;
+  box-shadow: 0 0 10px white;
 }
 
-.img-max {
-    max-height: 500px;
-    width:100%;
-    object-fit: cover;
-}
+.clock {
+  visibility: hidden;
+}/*# sourceMappingURL=style.css.map */

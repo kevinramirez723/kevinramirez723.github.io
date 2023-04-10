@@ -1,0 +1,119 @@
+$base-color: #0f0e15;
+$text-color: white;
+$text-dark: darken($text-color, 25%);
+
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap);
+@import 'typed';
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: $base-color;
+    font-family: 'Inter', sans-serif;
+    color: $text-color;
+    min-height: 100%;
+}
+
+.bg-image {
+    background-image:
+        linear-gradient(rgba($base-color, .5) 30%, $base-color),
+        url(../resources/background.jpg);
+    background-size: cover;
+    height: 90vh;
+}
+
+.navbar {
+    padding-top: 3em;
+
+    .navbar-toggler {
+        background-color: $base-color;
+        position: fixed;
+        top: 10px;
+    }
+
+    .nav-link {
+        margin: 0 1.5em;
+        color: $text-dark;
+        font-weight: 700;
+        font-size: .9em;
+        animation-duration: 2s;
+        animation-name: fadeInDown;
+        animation-iteration-count: 1;
+
+        &.active {
+            color: $text-dark;
+            text-decoration: underline;
+            text-underline-offset: .3em;
+        }
+
+        &:hover {
+            color: $text-color;
+            text-shadow: 0 0 7px $text-color;
+        }
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        background-color: $base-color;
+        margin-right: 60%;
+        position: absolute;
+        top: 48px;
+        left: 20px;
+    }
+}
+
+.title-container {
+    margin-top: 16vh;
+
+    .title {
+        font-size: 10vmin;
+        @include typed("Welcome,\AI'm Kevin.", .8, (caret-width: 4px, caret-speed: 1, iterations: 0));
+    }
+
+    .subtitle {
+        font-size: 8vmin;
+        color: $text-dark;
+        @include typed("Aspiring ", 1.5, (delay: 5, caret: false, caret-width: 4px, iterations: 0));
+
+        span {
+            @include typed("data analyst.", "artist.", "animator.", "game dev.", (type: .05, pause-typed: 1.5, delete: .05), (delay: 6, caret-width: 4px));
+        }
+    }
+}
+
+.btn-primary {
+    background-color: $base-color;
+    border: 0;
+
+    &:hover {
+        background-color: $base-color !important;
+        box-shadow: 0 0 10px white;
+    }
+
+    &.active {
+        background-color: green !important;
+
+        &:hover {
+            background-color: green !important;
+            box-shadow: 0 0 10px white;
+        }
+    }
+}
+
+.clock {
+    visibility: hidden;
+}
