@@ -30,9 +30,6 @@ body {
   color: #bfbfbf;
   font-weight: 700;
   font-size: 0.9em;
-  animation-duration: 2s;
-  animation-name: fadeInDown;
-  animation-iteration-count: 1;
 }
 .navbar .nav-link.active {
   color: #bfbfbf;
@@ -42,6 +39,17 @@ body {
 .navbar .nav-link:hover {
   color: white;
   text-shadow: 0 0 7px white;
+}
+.navbar .navbar-collapse {
+  animation-duration: 2s;
+  animation-name: fadeInDown;
+  animation-iteration-count: 1;
+}
+.navbar .navbar-collapse.show {
+  animation: none;
+}
+.navbar .navbar-collapse.disable-animation {
+  animation: none;
 }
 
 @keyframes fadeInDown {
