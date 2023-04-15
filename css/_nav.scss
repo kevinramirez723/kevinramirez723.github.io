@@ -1,0 +1,53 @@
+.navbar {
+    margin-top: max(2vh, 25px);
+
+    .navbar-toggler {
+        background-color: $base-color;
+        position: fixed;
+        top: 10px;
+    }
+
+    .nav-link {
+        margin: 0 1.5rem;
+        color: $text-dark;
+        font-weight: 700;
+        font-size: max(.9rem, .75vmax);
+
+        &.active {
+            color: $text-dark;
+            text-decoration: underline;
+            text-underline-offset: .3rem;
+        }
+
+        &:hover {
+            color: $text-color;
+            text-shadow: 0 0 7px $text-color;
+        }
+    }
+
+    .navbar-collapse {
+        animation-duration: 2s;
+        animation-name: fadeInDown;
+        animation-iteration-count: 1;
+
+        @include md {
+            background-color: $base-color;
+            margin-right: 60%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            animation: none;
+        }
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

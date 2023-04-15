@@ -17,6 +17,11 @@ $("nav").load("nav.html", function(){
     }
 });
 
+// Reusues footer for each page
+$.get("footer.html", function(data) {
+    $("footer").replaceWith(data);
+});
+
 if ($("html").hasClass("chalkboard")) {
     var clock;
     $("#timerbutton").on("click", function() {

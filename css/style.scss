@@ -2,106 +2,67 @@ $base-color: #0f0e15;
 $text-color: white;
 $text-dark: darken($text-color, 25%);
 
+@mixin md {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}
+
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap);
+@import 'nav';
 @import 'typed';
 
 html {
     height: 100%;
+    background-color: $base-color;
 }
 
 body {
-    background-color: $base-color;
-    font-family: 'Inter', sans-serif;
-    color: $text-color;
     min-height: 100%;
-}
-
-.bg-image {
-    background-image:
-        linear-gradient(rgba($base-color, .5) 30%, $base-color),
+    min-width: 200px;
+    background:
+        linear-gradient(rgba($base-color, .5) 30%, $base-color 90%),
         url(../resources/background.jpg);
     background-size: cover;
-    height: 90vh;
+    background-repeat: no-repeat;
+    font-family: 'Inter', sans-serif;
+    color: $text-color;
 }
 
-.navbar {
-    padding-top: 3em;
+.content {
+    .title-container {
+        min-width: 151px;
+        padding: 50px 25px max(15vh, 50px);
 
-    .navbar-toggler {
-        background-color: $base-color;
-        position: fixed;
-        top: 10px;
-    }
-
-    .nav-link {
-        margin: 0 1.5em;
-        color: $text-dark;
-        font-weight: 700;
-        font-size: .9em;
-
-        &.active {
-            color: $text-dark;
-            text-decoration: underline;
-            text-underline-offset: .3em;
+        .title {
+            font-size: max(6vw, 2rem);
+            @include typed("Welcome,\AI'm Kevin.", .8, (caret-width: 4px, caret-speed: 1, iterations: 0));
         }
+    
+        .subtitle {
+            font-size: max(4vw, 1.33rem);
+            color: $text-dark;
+            @include typed("Aspiring ", 1.5, (delay: 5, caret: false, caret-width: 4px, iterations: 0));
+    
+            span {
+                @include typed("data analyst.", "artist.", "animator.", "game dev.", (type: .05, pause-typed: 1.5, delete: .05), (delay: 6, caret-width: 4px));
+            }
+        }
+    }
+}
+
+footer {
+    margin-bottom: max(2vh, 25px);
+
+    #email {
+        margin: 0 1.5rem;
+        color: $text-dark;
+        font-size: max(.9rem, .75vmax);
+        text-decoration: none;
 
         &:hover {
             color: $text-color;
             text-shadow: 0 0 7px $text-color;
-        }
-    }
-
-    .navbar-collapse {
-        animation-duration: 2s;
-        animation-name: fadeInDown;
-        animation-iteration-count: 1;
-
-        &.show {
-            animation: none;
-        }
-
-        &.disable-animation {
-            animation: none;
-        }
-    }
-}
-
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-} 
-
-@media (max-width: 767.98px) {
-    .navbar-collapse {
-        background-color: $base-color;
-        margin-right: 60%;
-        position: absolute;
-        top: 48px;
-        left: 20px;
-    }
-}
-
-.title-container {
-    margin-top: 16vh;
-
-    .title {
-        font-size: 10vmin;
-        @include typed("Welcome,\AI'm Kevin.", .8, (caret-width: 4px, caret-speed: 1, iterations: 0));
-    }
-
-    .subtitle {
-        font-size: 8vmin;
-        color: $text-dark;
-        @include typed("Aspiring ", 1.5, (delay: 5, caret: false, caret-width: 4px, iterations: 0));
-
-        span {
-            @include typed("data analyst.", "artist.", "animator.", "game dev.", (type: .05, pause-typed: 1.5, delete: .05), (delay: 6, caret-width: 4px));
         }
     }
 }
