@@ -16,11 +16,11 @@ $("#clock-toggle").on("click", function() {
             if (h !== date.substring(0, 2)) {
                 h = date.substring(0, 2);
                 $(".hour").text(h);
-            };
+            }
             if (m !== date.substring(3, 5)) {
                 m = date.substring(3, 5);
                 $(".minute").text(m);
-            };
+            }
             $(".second").text(date.substring(6));
             $(".clock").css("visibility", "visible");
         }, 1000)
@@ -64,4 +64,22 @@ $("#numeric-sort").on("click", function() {
         return a - b;
     });
     $(".output").text(`Output array: ${num_arr}`);
+});
+
+$("#search-btn").on("click", function() {
+    var searchTerm = $("#wiki-search").val();
+    var connect = new XMLHttpRequest();
+    var url = `https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=4&gsrsearch=${searchTerm}`;
+    connect.open("GET", url);
+    connect.send();
+    connect.onload = function() {
+        var wikiObject = JSON.parse(this.response);
+        var pages = wikiObject.query.pages;
+        for (let i in pages) {
+            var newDiv = document.createElement("div");
+            newDiv.setAttribute("class", "row");
+            $("#wiki-output").append(newDiv);
+            newDiv.innerText = pages[i].title;
+        }
+    }
 });

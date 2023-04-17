@@ -966,11 +966,11 @@ footer #email:hover {
   background-color: #0f0e15;
 }
 
-a {
+.h2 {
   color: #bfbfbf;
   text-decoration: none;
 }
-a:hover {
+.h2:hover {
   color: white;
 }
 
