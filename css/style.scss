@@ -20,6 +20,7 @@ html {
 body {
     min-height: 100%;
     min-width: 200px;
+    overflow-x: hidden;
     background:
         linear-gradient(rgba($base-color, .5) 30%, $base-color 90%),
         url(../resources/background.jpg);
@@ -67,6 +68,29 @@ footer {
     }
 }
 
+.disable-animation {
+    animation: none;
+}
+
+.card-wrapper {
+    overflow-x: scroll;
+
+    .card-body {
+        min-height: 300px;
+        min-width: 300px;
+        background-color: $base-color;
+    }
+}
+
+a {
+    color: $text-dark;
+    text-decoration: none;
+
+    &:hover {
+        color: $text-color;
+    }
+}
+
 .btn-primary {
     background-color: $base-color;
     border: 0;
@@ -88,4 +112,35 @@ footer {
 
 .clock {
     visibility: hidden;
+}
+
+.bg1 {
+    background-color: rgb(249, 206, 206, .5);
+}
+
+.bg2 {
+    background-color: rgb(255, 245, 213, .5);
+}
+
+.bg3 {
+    background-color: rgb(221, 254, 233, .5);
+}
+
+.bg4 {
+    background-color: rgb(222, 231, 249, .5);
+}
+
+.col-md {
+    text-align: justify;
+    color: darken($text-color, 5%);
+
+    &::first-letter {
+        font-weight: bold;
+        color: $text-color;
+        font-size: 1.25rem;
+    }
+
+    @media (min-width: 992px) {
+        text-align: left;
+    }
 }

@@ -57,6 +57,7 @@ html {
 body {
   min-height: 100%;
   min-width: 200px;
+  overflow-x: hidden;
   background: linear-gradient(rgba(15, 14, 21, 0.5) 30%, #0f0e15 90%), url(../resources/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -952,6 +953,27 @@ footer #email:hover {
   text-shadow: 0 0 7px white;
 }
 
+.disable-animation {
+  animation: none;
+}
+
+.card-wrapper {
+  overflow-x: scroll;
+}
+.card-wrapper .card-body {
+  min-height: 300px;
+  min-width: 300px;
+  background-color: #0f0e15;
+}
+
+a {
+  color: #bfbfbf;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+}
+
 .btn-primary {
   background-color: #0f0e15;
   border: 0;
@@ -970,4 +992,35 @@ footer #email:hover {
 
 .clock {
   visibility: hidden;
+}
+
+.bg1 {
+  background-color: rgba(249, 206, 206, 0.5);
+}
+
+.bg2 {
+  background-color: rgba(255, 245, 213, 0.5);
+}
+
+.bg3 {
+  background-color: rgba(221, 254, 233, 0.5);
+}
+
+.bg4 {
+  background-color: rgba(222, 231, 249, 0.5);
+}
+
+.col-md {
+  text-align: justify;
+  color: #f2f2f2;
+}
+.col-md::first-letter {
+  font-weight: bold;
+  color: white;
+  font-size: 1.25rem;
+}
+@media (min-width: 992px) {
+  .col-md {
+    text-align: left;
+  }
 }/*# sourceMappingURL=style.css.map */

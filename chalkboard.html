@@ -26,14 +26,40 @@
         <nav class="navbar navbar-expand-md"></nav>
     </header>
     <main class="content d-flex flex-grow-1 flex-column align-items-center">
-        <div class="title-container my-auto">
-            <button type="button" class="btn btn-primary" data-bs-toggle="button" id="timerbutton">Toggle Clock</button>
-            <div class="row justify-content-center align-items-center g-2 clock">
-                <div class="col hour"></div>
-                <div class="col text-center">:</div>
-                <div class="col minute"></div>
-                <div class="col text-center">:</div>
-                <div class="col second"></div>
+        <div class="container-fluid p-5">
+            <h1 class="font-weight-light">Exercises</h1>
+            <div class="card-wrapper d-flex flex-row flex-nowrap gap-4">
+                <div class="card card-body">
+                    <a href="javascript:;" class="h2 stretched-link text-center primed mt-4" id="clock-toggle">Toggle Clock</a>
+                    <div class="row justify-content-center align-items-center g-2 clock m-5">
+                        <div class="col hour text-center"></div>
+                        <div class="col text-center">:</div>
+                        <div class="col minute text-center"></div>
+                        <div class="col text-center">:</div>
+                        <div class="col second text-center"></div>
+                    </div>
+                </div>
+                <div class="card card-body">
+                    <a href="javascript:;" class="h2 stretched-link text-center mt-4" id="simple-alert">Simple Alert</a>
+                </div>
+                <div class="card card-body">
+                    <a href="javascript:;" class="h2 stretched-link text-center mt-4" id="numeric-sort">Numeric Sort</a>
+                    <div class="input text-center"></div>
+                    <div class="output text-center"></div>
+                </div>
+                <div class="card card-body">
+                    <a href="responsive_cols" class="h2 stretched-link text-center mt-4">Responsive<br>Columns</a>
+                </div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
+                <div class="card card-body">Card</div>
             </div>
         </div>
     </main>
@@ -63,6 +89,7 @@
     </script>
 
     <script src="js/main.js"></script>
+    <script src="js/chalkboard.js"></script>
 </body>
 
 </html>
