@@ -28,7 +28,7 @@
     <main class="content d-flex flex-grow-1 flex-column align-items-center">
         <div class="container-fluid p-5">
             <h1 class="font-weight-light">Exercises</h1>
-            <div class="card-wrapper d-flex flex-row flex-nowrap gap-4">
+            <div class="d-flex flex-row flex-nowrap gap-4" id="card-wrapper">
                 <div class="card card-body">
                     <a href="javascript:;" class="h2 stretched-link text-center primed mt-4" id="clock-toggle">Toggle Clock</a>
                     <div class="row justify-content-center align-items-center g-2 clock m-5">
@@ -43,9 +43,16 @@
                     <a href="javascript:;" class="h2 stretched-link text-center mt-4" id="simple-alert">Simple Alert</a>
                 </div>
                 <div class="card card-body">
-                    <a href="javascript:;" class="h2 stretched-link text-center mt-4" id="numeric-sort">Numeric Sort</a>
-                    <div class="input text-center"></div>
-                    <div class="output text-center"></div>
+                    <div class="h2 text-center mt-4" id="numeric-sort">Numeric Sort</div>
+                    <div class="ms-3">
+                        <p>Enter nums split by commas:</p>
+                        <form>
+                            <input type="text" placeholder="Invalid values will be ignored" maxlength="18" id="numInput">
+                            <button type="button" class="btn btn-info mt-3" id="sort-btn">Sort</button>
+                        </form>
+                        <div class="ms-2 mt-1" id="sort-input"></div>
+                        <div class="ms-2 mt-1" id="sort-output"></div>
+                    </div>
                 </div>
                 <div class="card card-body">
                     <a href="responsive_cols" class="h2 stretched-link text-center mt-4">Responsive<br>Columns</a>

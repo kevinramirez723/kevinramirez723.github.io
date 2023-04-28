@@ -69,10 +69,10 @@ footer {
 }
 
 .disable-animation {
-    animation: none;
+    animation: none !important;
 }
 
-.card-wrapper {
+#card-wrapper {
     overflow-x: scroll;
 
     .card-body {

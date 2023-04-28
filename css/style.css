@@ -954,13 +954,13 @@ footer #email:hover {
 }
 
 .disable-animation {
-  animation: none;
+  animation: none !important;
 }
 
-.card-wrapper {
+#card-wrapper {
   overflow-x: scroll;
 }
-.card-wrapper .card-body {
+#card-wrapper .card-body {
   min-height: 300px;
   min-width: 300px;
   background-color: #0f0e15;

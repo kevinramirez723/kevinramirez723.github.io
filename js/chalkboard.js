@@ -1,12 +1,11 @@
 "use strict";
 
-// Toggle Clock listner
-var clock;
-$("#clock-toggle").on("click", function() {
-    if ($(this).hasClass("primed")) {
-        clearInterval(clock);
-        var h, m;
-        clock = setInterval(() => {
+// Toggles digital clock, updates in real-time on seconds interval.
+let intervalID;
+function toggleClock(link) {
+    if (link.hasClass("primed")) {
+        let h, m;
+        intervalID = setInterval(() => {
             let date = new Date().toLocaleDateString("en-GB", {
                 hour: "2-digit",
                 minute: "2-digit",
@@ -24,47 +23,31 @@ $("#clock-toggle").on("click", function() {
             $(".second").text(date.substring(6));
             $(".clock").css("visibility", "visible");
         }, 1000)
-        $(this).removeClass("primed")
+        link.removeClass("primed")
     }
     else {
         $(".clock").css("visibility", "hidden");
-        clearInterval(clock);
-        $(this).addClass("primed")
+        intervalID = clearInterval(intervalID);
+        link.addClass("primed")
     }
-});
-
-// Simple alert listner
-$("#simple-alert").on("click", function() {
-    alert("This is a simple alert.");
-});
-
-
-// Helper function for Numeric Sort
-function isInt(value) {
-    if (isNaN(value)) {
-        return false;
-    }
-    var x = parseFloat(value);
-    return (x | 0) === x;
 }
- // Numeric Sort listner
-$("#numeric-sort").on("click", function() {
-    do{
-        var n = prompt("Select length of array. (Integer between 2-6)", "");
-    } while(!isInt(n) || (+n < 2 || +n > 6));
-    var num_arr = new Array;
-    for (let i = 0; i < n; i++) {
-        do {
-            var x = prompt(`Please insert array element ${i}. (Integers only)`, "");
-        } while (!isInt(x));
-        num_arr.push(+x);
-    }
-    $(".input").text(`Input array: ${num_arr}`);
+
+function simpleAlert() {
+    alert("This is a simple alert.");
+}
+
+function numericSort() {
+    let num_arr = $("#numInput")
+        .val()
+        .split(",")
+        .map(e => parseFloat(e))
+        .filter(e => !isNaN(e));
+    $("#sort-input").text(`Input: ${num_arr}`);
     num_arr.sort(function(a, b) {
         return a - b;
     });
-    $(".output").text(`Output array: ${num_arr}`);
-});
+    $("#sort-output").text(`Output: ${num_arr}`);
+}
 
 $("#search-btn").on("click", function() {
     var searchTerm = $("#wiki-search").val();
@@ -81,5 +64,32 @@ $("#search-btn").on("click", function() {
             $("#wiki-output").append(newDiv);
             newDiv.innerText = pages[i].title;
         }
+    }
+});
+
+$("#card-wrapper").on("click", "a, button", function(event) {
+    switch($(this).attr("id")) {
+        case "clock-toggle":
+            toggleClock($(this));
+            break;
+        case "simple-alert":
+            simpleAlert();
+            break;
+        case "sort-btn":
+            numericSort();
+            break;
+        default:
+    }
+});
+
+$("#card-wrapper").on("keypress", "input", function(event) {
+    switch($(this).attr("id")) {
+        case "numInput":
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                numericSort();
+            }
+            break;
+        default:
     }
 });
